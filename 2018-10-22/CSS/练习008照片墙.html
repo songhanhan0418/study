@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片墙</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		h3{
+			text-align: center;
+			margin-top: 20px;
+			color: purple;
+		}
+		ul{
+			height: 500px;
+			background: skyblue;
+			margin-top: 50px;
+			text-align: center;
+			position: relative;
+		}
+		ul li{
+			width: 250px;
+			height: 300px;
+			display: inline-block;
+			margin-top: 100px;
+			margin-left: 20px;
+			position: relative;
+			transition: all 1s;
+		}
+		ul li img{
+			width: 100%;
+			height: 100%;
+		/* 	border: 5px solid #fff; */
+			box-sizing: border-box;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			transform: rotate(0deg) scale(1.2);
+			opacity: 1;
+			z-index: 1;
+		}
+		li:nth-child(1){
+			transform: rotate(20deg);
+			border: 5px solid yellow;
+		}
+		li:nth-child(2){
+			transform: rotate(-10deg);
+			border: 5px solid purple;
+		}
+		li:nth-child(3){
+			transform: rotate(-20deg);
+			border: 5px solid red;
+		}
+		li:nth-child(4){
+			transform: rotate(15deg);
+			border: 5px solid green;
+		}
+		li:nth-child(5){
+			transform: rotate(-15deg);
+			border: 5px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="ARASHI/ergong.jpeg" alt=""></li>
+		<li><img src="ARASHI/masaki.jpeg" alt=""></li>
+		<li><img src="ARASHI/xiang.jpg" alt=""></li>
+		<li><img src="ARASHI/yaji.jpeg" alt=""></li>
+		<li><img src="ARASHI/zhi.jpeg" alt=""></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header ul{
+			width: 800px;
+			height: 50px;
+			background: gray;
+			position: fixed;
+			top: 50px;
+			left:50%;
+			margin-left: -400px;
+			z-index: 1;
+		}
+		header li{
+			width: 20%;
+			height: 50px;
+			line-height: 50px;
+			list-style: none;
+			float: left;
+			text-align: center;
+		}
+		header li:nth-child(3){
+			position: relative;
+		}
+		header li:nth-child(3) img{
+			position: absolute;
+			left: 63px;
+			top: -13px;
+		}
+		header li:hover{
+			background: red;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		.window{
+			width: 760px;
+			margin:150px auto;
+			position: relative;
+		}
+		.tleft{
+			width: 50px;
+			height: 70px;
+			position: absolute;
+			left: 0px;
+			top:50%;
+			margin-top: -35px;
+			background: gray;
+			font-size: 30px;
+			line-height: 70px;
+			text-align: center;
+			cursor: pointer;
+		}		
+		.tright{
+			width: 50px;
+			height: 70px;
+			position: absolute;
+			right: 0px;
+			top: 50%;
+			margin-top: -35px;
+			background: gray;
+			font-size: 30px;
+			line-height: 70px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.window ul {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			list-style: none;
+		}
+		.window ul li{
+			border-radius: 50%;
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			background: gray;
+			float: left;
+			text-align:center;
+			cursor: pointer;
+		}
+		.window-left{
+			width: 50px;
+			height: 200px;
+			background: red;
+			position: fixed;
+			left: 0;
+			top: 50%;
+			margin-top: -100px;
+		}
+		.window-right{
+			width: 50px;
+			height: 200px;
+			background: red;
+			position: fixed;
+			right: 0;
+			top: 50%;
+			margin-top: -100px;
+		}
+		footer{
+			width: 800px;
+			height: 500px;
+			margin: 50px auto;
+			background: green;
+		}
+		.return{
+			width: 100px;
+			height: 100px;
+			background: gray;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			line-height: 100px;
+			text-align:center;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="#" class="box1">天猫会员</a></li>
+			<li><a href="#" class="box2">品牌街</a></li>
+			<li><a href="#" class="box3">电器城<img src="photo/定位流素材副本.jpg" alt=""></a></li>
+			<li><a href="#" class="box4">营业厅</a></li>
+			<li><a href="#" class="box5">魅力惠</a></li>
+		</ul>
+	</header>
+	<section>
+		<div class="window">
+			<img src="photo/定位流素材背景图.png" alt="">
+			<div class="tleft">&lt;</div>
+			<div class="tright">&gt;</div>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<div class="window-left"></div>
+		<div class="window-right"></div>
+	</section>
+	<footer>我是内容</footer>
+	<div class="return"><a href="#" class="return-back">返回顶部</a></div>
+</body>
+</html>

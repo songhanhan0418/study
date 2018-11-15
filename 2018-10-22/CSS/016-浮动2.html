@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father1{
+			width: 100%;
+			background: yellow;
+			/* margin-bottom: 50px; */
+			/* overflow: hidden; */
+		}
+		.clearfix:after{
+			content: "";
+			clear: both;
+			display: block;
+			height: 0px;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom:1;		
+		}
+		.father2{
+			width: 100%;
+			background: gray;
+			/* clear: both; */
+		}
+		.son1{
+			width: 100px;
+			background: red;
+			float: left;
+		}
+		.son2{
+			width: 100px;
+			background: green;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1 clearfix">
+		<p class="son1">1</p>
+		<p class="son1">2</p>
+		<p class="son1">3</p>
+	</div>
+
+	<div class="father2">
+		<p class="son2">*1</p>
+		<p class="son2">*2</p>
+		<p class="son2">*3</p>
+	</div>
+</body>
+</html>

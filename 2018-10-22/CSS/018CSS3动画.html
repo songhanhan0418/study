@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			animation-name: sport;
+			animation-duration: 2s;
+			animation-iteration-count: 1;
+/* 			animation-play-state: running; */
+			/* transform: rotate(80deg); */
+			perspective: 500px;
+			animation-direction: alternate;
+			animation-fill-mode: both;
+
+		}
+		div:hover{
+			animation-play-state: paused;
+		}
+		@keyframes sport{
+			from{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				transform: rotate(80deg);
+			}
+			to{
+				width: 600px;
+				height: 600px;
+				background: red;
+				transform: rotate(170deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

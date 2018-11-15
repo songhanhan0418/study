@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix:after{
+			height: 0px;
+			content: "";
+			clear: both;
+			display: block;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom:1;
+		}
+		.box1,.box2,.box3{
+			width:800px;
+			margin-left: auto;
+			margin-right: auto;
+			background: gray;
+		}
+		.son1{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			float: left;
+		}
+		.son2{
+			width: 150px;
+			height: 50px;
+			background: gray;
+			float: right;
+		}
+		.son3{
+			width: 650px;
+			height: 50px;
+			background: purple;
+			float: right;
+		}
+		.son4{
+			width: 500px;
+			height: 300px;
+			background: yellow;
+			float: left;
+			margin-top: 10px;
+		}
+		.son5{
+			width: 130px;
+			height: 600px;
+			background: green;
+			float: right;
+			margin-top: 10px;
+		}
+		.son6{
+			width: 130px;
+			height: 550px;
+			background: pink;
+			float: right;
+			margin:10px 10px;
+		}
+		.son7{
+			width: 500px;
+			height: 240px;
+			background: yellow;
+			float: left;
+			margin-top: 10px;
+		}
+		.son8{
+			width: 660px;
+			height: 40px;
+			background: red;
+			float: left;
+		}
+		.son9{
+			width: 800px;
+			height: 50px;
+			background: blue;
+			float: left;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 clearfix">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+	<div class="box2 clearfix">
+		<div class="son4"></div>
+		<div class="son5"></div>
+		<div class="son6"></div>
+		<div class="son7"></div>
+		<div class="son8"></div>
+	</div>
+	<div class="box3 clearfix">
+		<div class="son9"></div>
+	</div>
+</body>
+</html>

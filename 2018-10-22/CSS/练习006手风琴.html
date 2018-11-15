@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 1000px;
+			height: 500px;
+			border: 1px solid;
+			margin: 0 auto;
+			background: gray;
+			list-style: none;
+			overflow: hidden;
+		}
+		li{
+			width: 200px;
+			height: 500px;
+			float: left;
+			background: red;
+			transition-property:width;
+			transition-duration: 1s;
+		}
+		img{
+			height: 100%;
+		}
+		ul:hover li{
+			width: 170px;
+		}
+		ul li:hover{
+			width: 320px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="photo/wow1.jpg" alt=""></li>
+		<li><img src="photo/wow2.jpg" alt=""></li>
+		<li><img src="photo/wow3.jpg" alt=""></li>
+		<li><img src="photo/wow4.jpg" alt=""></li>
+		<li><img src="photo/wow5.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

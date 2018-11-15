@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.youxiang{
+			width: 100%;
+			height: 63px;
+			background: rgb(239,244,250);
+		}
+		.logo{
+			width: 182px;
+			height: 35px;
+			margin: 14px 17px;
+			float: left;
+		}
+		.jiben{
+			width: 244px;
+			height: 60px;
+			float: right;
+			line-height: 60px;
+		}
+		.login{
+			width: 915px;
+			height: 389px;
+			margin: 50px auto;
+		}
+		.weixiao{
+			font-size: 12px;
+			float: left;
+			padding: 10px;
+		}
+		.denglu{
+			width: 334px;
+			height: 387px;
+			border: 1px solid gray;
+			float: right;
+			border-radius: 5px;
+		}
+		.rdenglu{
+			width: 50%;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			color: rgba(90,90,90,0.5);
+			border-bottom: 1px solid gray;
+		}
+		.rdenglu:hover{
+			color:black;
+		}
+		.kuaisu{
+			float: left;
+		}
+		.zhanghao{
+			float: right;
+		}
+		.input1{
+			float: left;
+			width: 250px;
+			height: 20px;
+			margin: 10px 35px;
+			padding: 5px;
+		}
+		.checkbox1 input{
+			float: left;
+			width: 15px;
+			height:15px;
+			margin: 4px 0px;
+		}
+		.checkbox1{
+			font-size: 14px;
+			margin: 0px 0px 10px 35px;
+		}
+		.submit1{
+			width: 250px;
+			height: 50px;
+			margin: 20px 35px;
+			background: rgb(20,80,80);
+			font-size: 16px;
+			border-radius: 5px;
+			color: white;
+			cursor: pointer;
+		}
+		a{
+			font-size: 12px;
+			text-decoration: none;
+		}
+		h1{
+			padding-top: 25px;
+			color:#6f95c8;
+		}
+		input:focus{
+			color: blue;
+		}
+		ul{
+			width: 250px;
+			overflow: hidden;
+			list-style: none;
+			margin: 80px 0px 0px 140px;
+		}
+		a{
+			color: gray;
+			float: left;
+		}
+		.guanyu{
+			width: 100%;
+			height: 100px;
+			background: gray;
+			position: fixed;
+			left: 0px;
+			bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="youxiang">
+		<div class="logo">
+			<a href="#"><img src="photo/logo_qq.png" alt="QQ邮箱"></a>
+		</div>
+		<div class="jiben">
+			<a href="#"">基本版&nbsp;|&nbsp;</a>
+			<a href="#"">English&nbsp;|&nbsp;</a>
+			<a href="#"">手机版&nbsp;|&nbsp;</a>
+			<a href="#">企业邮箱</a>
+		</div>
+	</div>
+	<div class="login">
+		<div class="weixiao">
+			<h1>QQ邮箱，常联系！</h1>
+			<p>2500年前，人们飞鸽传书</p>
+			<p>182年前，莫尔斯发明了电报</p>
+			<p>49年前，第一封电子邮件发出</p>
+			<p>今天，QQ邮箱联系你、我、他</p>
+		</div>
+		<div class="denglu">
+			<p class="kuaisu rdenglu">快速登录</p>
+			<p class="zhanghao rdenglu"><label for="1">账号密码登录</label></p>
+			<input class="input1" type="text" name="name" value="" placeholder="支持QQ号/手机号/邮箱登录" id="1">
+			<input class="input1" type="password" name="password" value="" placeholder="QQ密码">
+			<div class="checkbox1"><input type="checkbox">下次自动登录</div>
+			<input class="submit1" type="submit" value="登录">
+			<ul>
+				<li><a href="#">忘了密码&nbsp;|&nbsp;</a></li>
+				<li><a href="#">注册新账号&nbsp;|&nbsp;</a></li>
+				<li><a href="#">意见反馈</a></li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<ul class="guanyu">
+			<li><a href="#">关于腾讯</a></li>
+			<li><a href="#">服务条款</a></li>
+			<li><a href="#">隐私政策</a></li>
+			<li><a href="#">客服中心</a></li>
+			<li><a href="#">联系我们</a></li>
+			<li><a href="#">帮助中心</a></li>
+		</ul>
+	</div>
+</body>
+</html>

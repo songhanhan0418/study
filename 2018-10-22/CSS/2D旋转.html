@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D旋转</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 800px;
+			margin:100px auto;
+			list-style: none;
+			perspective:1000px;
+		}
+		li{
+			width: 100px;
+		}
+		li:nth-child(1) img{
+			transform: rotateX(40deg);
+		}
+		li:nth-child(2) img{
+			transform: rotateY(40deg);
+		}
+		li:nth-child(3) img{
+			transform: rotateZ(50deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="photo/wow1.jpg" alt=""></li>
+		<li><img src="photo/wow2.jpg" alt=""></li>
+		<li><img src="photo/wow3.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

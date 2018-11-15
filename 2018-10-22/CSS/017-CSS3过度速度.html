@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 800px;
+			height: 750px;
+			border: 1px solid;
+			padding-top: 10px;
+		}
+		li{
+			width: 100px;
+			height: 80px;
+			margin-top: 10px;
+			background: red;
+			transition-property: margin-left background;
+			transition-duration: 2s;
+		}
+		ul:hover li{
+			margin-left: 700px;
+			background: green;
+		}
+		li:nth-child(1){
+			transition-timing-function: ease;
+		}
+		li:nth-child(2){
+			transition-timing-function: linear;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

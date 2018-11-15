@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D轮播图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin:100px auto;
+			list-style: none;
+			position: relative;
+			opacity: 500px;
+			transform-style: preserve-3d;
+			transform: rotateX(15deg) rotateY(15deg);
+			animation:sport 4s linear infinite;
+		}
+		@keyframes sport{
+			from{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform: rotateX(360deg);
+			}
+		}
+		li{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			text-align: center;
+			line-height: 200px;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: rotateX(90deg) translateZ(100px) scale(2,1);
+
+		}
+		li:nth-child(2){
+			background: green;
+			transform: rotateX(180deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(3){
+			background: blue;
+			transform: rotateX(270deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(4){
+			background: gray;
+			transform: rotateX(360deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(5){
+			background: black;
+			transform: rotateY(-90deg) translateZ(100px) translateZ(100px);
+		}
+		li:nth-child(6){
+			background: yellow;
+			transform: rotateY(90deg) translateZ(100px) translateZ(100px);
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="photo/wow1.jpg" alt=""></li>
+		<li><img src="photo/wow2.jpg" alt=""></li>
+		<li><img src="photo/wow3.jpg" alt=""></li>
+		<li><img src="photo/wow4.jpg" alt=""></li>
+		<li><img src="photo/wow5.jpg" alt=""></li>
+		<li><img src="photo/wow6.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

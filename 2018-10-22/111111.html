@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>1</title>
+		<style>
+			select{
+				color: black;
+				/* font-style: italic; */
+				font-weight: bolder;
+				font-family: STSONG;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="http://www.baidu.com">
+			<p><label for="1">邮件地址：</label>
+				<input type="text" name="邮箱" value="" id="1" placeholder="建议用手机号码注册">@
+				<select name="邮箱后缀">
+					<option value="163.com">163.com</option>
+					<option value="126.com">126.com</option>
+				</select>
+			</p>
+			<p style="color: gray;font-size: 12px;text-indent: 6em">6~18个字符，可使用字母、数字、下划线，需以字母开头</p>
+			<p>
+				<label for="2">密码：</label>
+				<input type="password" name="密码" value="" id="2">
+			</p>
+			<p style="color: gray;font-size: 12px;text-indent: 6em">6~16个字符，区分大小写</p>
+			<p>
+				<label for="3">确认密码：</label>
+				<input type="password" name="password" value="" id="3">
+			</p>
+			<p style="color: gray;font-size: 12px;text-indent: 6em">请再次填写密码</p>
+			<p>
+				手机号码
+				<input type="text" name="手机号" value="+86">
+			</p>
+			<p>
+				验证码
+				<input type="text" name="验证码" value="">
+				<img src="resource/1.jpg" alt="加载失败">
+			</p>
+			<p style="color: gray;font-size: 12px;text-indent: 6em">请填写图片中的字符，不区分大小写&nbsp;&nbsp;&nbsp;<a href="#">看不清除?换张图片</a>
+			</p>
+			<p>
+				<button><a href="#">免费获取验证码</a></button>
+			</p>
+			<input type="checkbox" name="同意" value="">同意<a href="#">"服务条款"</a>和<a href="#">"隐私权相关政策"</a>
+			<p>
+				<input type="submit">
+			</p>
+		</form>
+	</body>
+</html>
