@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: red;
+			margin:50px auto;
+		}
+	</style>
+	<script>
+		//函数
+		function toBig(){
+			var oBox=document.getElementById('box');
+			oBox.style.width='200px';
+			oBox.style.height='200px';
+			oBox.style.background='blue'
+		}
+		
+
+		function toSmall(){
+			var oBox=document.getElementById('box');
+			oBox.style.width='100px';
+			oBox.style.height='100px';
+			oBox.style.background='red'
+		}
+		
+	</script>
+</head>
+<body>
+	<div id="box" onmouseover="toBig()" onmouseout="toSmall()"></div>
+</body>
+</html>
