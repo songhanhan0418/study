@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#tab-list{
+			width: 400px;
+			height: 100px;
+			list-style: none;
+			float: left;
+			overflow: hidden;
+		}
+		#tab-list li{
+			float: left;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+		#container{
+			list-style: none;
+			overflow: hidden;
+		}
+		#container li{
+			width: 400px;
+			height: 600px;
+			font-size: 80px;
+			text-align: center;
+			line-height: 600px;
+			border: 1px solid #000;
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<ul id="tab-list">
+		<li>热门</li>
+		<li>电视</li>
+		<li>电影</li>
+		<li>家具</li>
+	</ul>
+	<ul id="container">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var oBtn = document.querySelectorAll('tab-list li');
+	var oContainer = document.querySelectorAll('container li');
+	console.log(oBtn);
+
+
+</script>
+</html>
