@@ -35,6 +35,7 @@
 			text-align: center;
 			font-size: 30px;
 			background: #000;
+			color: #fff;
 		}
 		.content{
 			width: 100%;
@@ -73,9 +74,13 @@
 	var aMonth = document.getElementsByTagName('li');
 	var oContent = document.querySelector('.content');
 	for(var i = 0;i < aMonth.length;i++){
-		for(var j = )
+		aMonth[i].index = i;
 		aMonth[i].onmouseover = function(){
-			this.className = 'active'
+			for(var j = 0;j < aMonth.length;j++){
+			aMonth[j].className = '';
+		}
+			this.className = 'active';
+			oContent[this.index].innerHTML
 		}
 	}
 </script>
