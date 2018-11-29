@@ -8,19 +8,17 @@
 	
 </body>
 <script>
-	/*function sum (n1,n2){
-		alert(n1+n2);
-	}
-	sum(3,4)
-	*/
 	function sum (){
-		//console.log(arguments);
 		var result = 0;
 		for(var i = 0; i<arguments.length;i++){
-			result = result + arguments[i];
+			result += arguments[i];
 		}
-		alert(result);
+		
+		return result;
+		//alert(result);
 	}
+
 	sum(3,4,5,6);
+	alert(result);
 </script>
 </html>

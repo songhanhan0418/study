@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn1">取样</button>
+	<button id="btn2">调用</button>
+	<div id="box1"></div>
+</body>
+<script>
+	/*
+	function css(obj,attr,val){
+		if(arguments.length == 2){
+			return alert(getComputedStyle(oBox1,false)['width']);
+		}else{
+			obj.style[attr] = val;
+		}
+	}
+	*/
+	function css(){
+		if(arguments.length == 2){
+			return alert(getComputedStyle(arguments[0],false)[arguments[1]]);
+		}else{
+			arguments[0].style[arguments[1]] = arguments[2];
+		}
+	}
+
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox1 = document.getElementById('box1');
+
+
+
+	oBtn1.onclick = function (){
+		//alert(getComputedStyle(oBox1,false)['width']);
+		css(oBox1,"width")
+	}
+	oBtn2.onclick = function (){
+		css(oBox1,"width","200px")
+	}
+</script>
+</html>
