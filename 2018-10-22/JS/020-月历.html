@@ -65,14 +65,14 @@
 			<li>12</li>
 		</ul>
 		<div class="content">
-			<h2>1月</h2>
-			<p>吃饭</p>
 		</div>
 	</div>
 </body>
 <script>
 	var aMonth = document.getElementsByTagName('li');
 	var oContent = document.querySelector('.content');
+	var aContent = ["吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步"]
+	oContent.innerHTML = "<h2>1月</h2><p>"+aContent[0]+"</p>"
 	for(var i = 0;i < aMonth.length;i++){
 		aMonth[i].index = i;
 		aMonth[i].onmouseover = function(){
@@ -80,7 +80,7 @@
 			aMonth[j].className = '';
 		}
 			this.className = 'active';
-			oContent[this.index].innerHTML
+			oContent.innerHTML = "<h2>"+(this.index+1)+"月</h2><p>"+aContent[this.index]+"</p>"
 		}
 	}
 </script>
