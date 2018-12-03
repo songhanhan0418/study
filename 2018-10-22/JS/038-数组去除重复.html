@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [2,3,4,2,3,5];
+	var result = [];
+	console.log(arr1);
+	for(var i = 0;i < arr1.length;i++){
+		var isDup = false;
+		for(var j = 0; j < result.length;j++){
+			if(arr1[i] == result[j]){
+				isDup = true;
+				break;
+			}
+		}
+		if(isDup == false){
+			result.push(arr1[i]);
+		}
+		/*if(result.indexOf() == -1){
+			result.push(arr1[i]);
+		}*/
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	console.log(result);
+</script>
+</html>

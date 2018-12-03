@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [5,2,8,10,9,20,1,15];
+	var tmp;
+	for(var i = 0;i < arr1.length;i++){
+		for(var j = i+1 ; j< arr1.length;j++){
+			if(arr1[i] > arr1[j] ){
+				tmp = arr1[i];
+				arr1[i] = arr1[j];
+				arr1[j] = tmp;
+				
+			}
+			
+		}
+		console.log(arr1);
+	}
+</script>
+</html>

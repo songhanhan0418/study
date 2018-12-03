@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">变宽变高</button>
+	<button id="btn2">颜色</button>
+	<div id="box"></div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox = document.getElementById('box');
+	function css (){
+		if(arguments.length == 3){
+			arguments[0].style[arguments[1]]='400px';
+			arguments[0].style[arguments[2]]='400px';
+		}else{
+			alert(getComputedStyle(arguments[0],false)[arguments[1]]);
+		}
+	}
+	oBtn1.onclick = function(){
+		css(oBox,'width','height');
+
+	}
+	oBtn2.onclick = function(){
+		css(oBox,'backgroundColor');
+	}
+</script>
+</html>
