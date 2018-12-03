@@ -12,7 +12,7 @@
 	var result = [];
 	console.log(arr1);
 	for(var i = 0;i < arr1.length;i++){
-		var isDup = false;
+		/*var isDup = false;
 		for(var j = 0; j < result.length;j++){
 			if(arr1[i] == result[j]){
 				isDup = true;
@@ -21,23 +21,11 @@
 		}
 		if(isDup == false){
 			result.push(arr1[i]);
-		}
-		/*if(result.indexOf() == -1){
-			result.push(arr1[i]);
 		}*/
+		if(result.indexOf(arr1[i],0) == -1){
+			result.push(arr1[i]);
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 	console.log(result);
 </script>
 </html>
