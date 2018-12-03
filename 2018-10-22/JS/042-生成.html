@@ -20,7 +20,8 @@
 		var oLi = document.createElement('li');
 		oLi.innerHTML = val;
 		//console.log(oLi.innerHTML);
-		oUl.appendChild(oLi);
+		//oUl.appendChild(oLi);
+		oUl.insertBefore(oLi,oUl.firstChild);
 		oTxt.value = '';
 	}
 </script>
