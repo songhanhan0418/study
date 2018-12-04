@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>5</li>
+		<li>30</li>
+		<li>14</li>
+		<li>8</li>
+		<li>12</li>
+	</ul>
+	<input type="button" id="btn" value="点击">
+	<ul id="ul2"></ul>
+</body>
+<script>
+	var oUl1 = document.getElementById('ul1');
+	var oUl2 = document.getElementById('ul2');
+	var oBtn = document.getElementById('btn');
+	var aLi = oUl1.children;
+	var aEle = [];
+	//console.log(aLi);
+	oBtn.onclick = function(){
+		for(var i = 0;i<aLi.length;i++){
+			aEle.push(aLi[i]);
+		}
+		aEle.sort(function(n1,n2){
+
+			return n1.innerHTML - n2.innerHTML ;
+		})
+		//console.log(aEle);
+		for(var i = 0;i<aEle.length;i++){
+			oUl2.appendChild(aEle[i]);
+		}
+
+
+		/*for(var j = 0;j<aEle.length;j++){
+			aEle.sort(function(){
+				if(aEle[i] - aEle[i+1] == -1){
+					console.log(aEle[i]);
+					oUl2.appendChild(aEle[i]);
+				}
+			})
+		}*/
+		
+		//oUl2.appendChild(oUl1.firstElementChild);
+	}
+		 
+</script>
+</html>
