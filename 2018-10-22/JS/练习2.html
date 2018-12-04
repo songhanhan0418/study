@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<input type="button" value="点击" id="btn1">
+	<input type="button" value="点击" id="btn2">
+	<input type="button" value="点击" id="btn3">
+</body>
+<script>
+	var oUl1 = document.getElementById('ul1');
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	var oLi = document.createElement('li');
+	oBtn1.onclick = function(){
+		oLi.innerHTML = 4;
+		oUl1.appendChild(oLi);
+	}
+	oBtn2.onclick = function(){
+		oLi.innerHTML = 0;
+		oUl1.insertBefore(oLi,oUl1.firstChild);
+	}
+	oBtn3.onclick = function(){ 
+		console.log(oUl1.firstElementChild);
+		oUl1.firstElementChild.parentNode.removeChild(oUl1.children[1]);
+	}
+</script>
+</html>
