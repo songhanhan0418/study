@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.home .banner{
+			position: relative;
+			margin-bottom: 14px;
+		}
+		.home .banner-ad-ul{
+			width: 234px;
+			height: 460px;
+			line-height: 40px;
+			padding: 15px 0 20px 0;
+			box-sizing: border-box;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.home .banner-ad .banner-ad-a{
+			position: absolute;
+			left: 0;
+			top:0;
+			width: 1226px;
+			height: 460px;
+			background-color: red;
+		}
+		.home .banner-ad .banner-ad-a img{
+			width: 1226px;
+			height: 460px;
+		}
+		.home .banner-ad-ul{
+			position: relative;
+			z-index: 1;
+		}
+		.home .banner-ad-ul-li{
+			cursor: pointer;
+			padding-left: 30px;
+			font-size: 20px;
+			color:#bbbab7;
+		}
+		.home .banner-ad-ul-li a{
+			color: #fff;
+		}
+		.home .banner-ad-ul-li i{
+			margin-right: 15px;
+			float: right;
+		}
+		.home .banner .banner-span{
+			position: absolute;
+			top: 50%;
+			margin-top: -40px;
+			width: 50px;
+			height: 80px;
+			font-size: 25px;
+			text-align: center;
+			line-height: 80px;
+			cursor: pointer;
+		}
+		.home .banner .banner-span-left{
+			left: 234px;
+		}
+		.home .banner .banner-span-right{
+			right: 0px;
+		}
+		.home .banner .banner-point{
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			width:100px;
+			height:20px;
+		}
+		.home .banner .banner-point .banner-point-li{
+			float: left;
+			list-style: none;
+			width: 8px;
+			height: 8px;
+			margin-left: 15px;
+			margin-top: 5px;
+			border-radius: 50%;
+			border:2px solid #999;
+			background:#666;
+			cursor: pointer;
+		}
+		.home .banner .banner-point .banner-point-li:hover{
+			background: #fff;
+		}
+		.home .banner .banner-span:hover{
+			background: #222;
+			color:#fff;
+		}
+		.home .banner-ad-ul-li:hover{
+			background: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+				<div class="banner-ad">
+					<a class="banner-ad-a" href="#"><img src="images/b1.jpg" alt=""></a>
+					<a class="banner-ad-a" href="#"><img src="images/b2.jpg" alt=""></a>
+					<a class="banner-ad-a" href="#"><img src="images/b3.jpg" alt=""></a>
+				</div>
+				<span class="banner-span-left banner-span"><i class="iconfont">&#xe627;</i></span>
+				<span class="banner-span-right banner-span"><i class="iconfont">&#xe622;</i></span>
+				<ul class="banner-point">
+					<li class="banner-point-li"></li>
+					<li class="banner-point-li"></li>
+					<li class="banner-point-li"></li>
+				</ul>
+			</div>
+</body>
+</html>
