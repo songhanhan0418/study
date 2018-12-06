@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			width: 1000px;
+			height: 100px;
+			font-size: 60px;
+			margin:200px auto;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<img src="images/1.png" alt="">
+		<img src="images/1.png" alt="">
+		:
+		<img src="images/1.png" alt="">
+		<img src="images/1.png" alt="">
+		:
+		<img src="images/1.png" alt="">
+		<img src="images/1.png" alt="">
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	var aImages = oTimer.children;
+	function check(num){
+		if(num < 10){
+			num = '0' + num;
+		}
+		return ''+num;
+	}
+	function time(){
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		h = check(h);
+		m = check(m);
+		s = check(s);
+		oTimer = h + m + s;
+		console.log(oTimer);
+		for(var i = 0;i<aImages.length;i++){
+			aImages[i].src="images/"+oTimer[i]+".png"
+		}
+	}
+	setInterval(time,1000);
+	time();
+</script>
+</html>

@@ -3,8 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#box{
+			text-align: center;
+			margin-top: 200px;
+			font-size: 50px;
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="box">
+		
+	</div>
 </body>
+<script>
+	var oBox = document.getElementById('box');
+	var endTime = new Date('2018-12-06 20:44:30');
+	var endTimeSeconds = endTime.getTime();
+	var timer = 0;
+	function time(){
+		var AllEndSeconds = endTimeSeconds - Date.now();
+		if(AllEndSeconds <=0){
+			AllEndSeconds = 0;
+			clearInterval(timer);
+		}
+		var AllSeconds = parseInt(AllEndSeconds / 1000);
+		var oHour = parseInt(AllSeconds / 3600);
+		var oMinute = parseInt((AllSeconds % 3600)/60);
+		var oSeconds = (AllSeconds % 3600) % 60;
+		function check(num){
+			if(num < 10){
+				num = '0' + num;
+			}
+			return ''+num;
+		}
+		oBox.innerHTML = '距离活动结束还有'+check(oHour)+'小时'+check(oMinute)+'分钟'+check(oSeconds)+'秒';
+		timer = setInterval(time,500);
+	}
+	
+	time();
+</script>
 </html>
