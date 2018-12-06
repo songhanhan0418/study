@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	function star(){
+		var oBox = document.getElementById('box');
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		/*if(m < 10){
+			m = '0'+ m;
+		}
+		if(s < 10){
+			s = '0'+ s;
+		}*/
+		m = checkTime(m);
+		s = checkTime(s);
+		oBox.innerHTML = h + ':' + m + ':' + s ;
+		t = setTimeout(star,500);
+	}
+	function checkTime(i){
+		if(i < 10){
+			i = '0'+i;
+		}
+		return i;
+	}
+	star();
+</script>
+</html>
