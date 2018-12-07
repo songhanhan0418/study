@@ -8,11 +8,13 @@
 			margin: 0;
 			padding: 0;
 		}
-		.home .banner{
+		.banner{
 			position: relative;
-			margin-bottom: 14px;
+			margin-top: 100px;
+			margin-left: 100px;
+			height: 460px;
 		}
-		.home .banner-ad-ul{
+		.banner-ad-ul{
 			width: 234px;
 			height: 460px;
 			line-height: 40px;
@@ -20,7 +22,7 @@
 			box-sizing: border-box;
 			background-color: rgba(0,0,0,0.5);
 		}
-		.home .banner-ad .banner-ad-a{
+		.banner-ad .banner-ad-a{
 			position: absolute;
 			left: 0;
 			top:0;
@@ -28,28 +30,28 @@
 			height: 460px;
 			background-color: red;
 		}
-		.home .banner-ad .banner-ad-a img{
+		.banner-ad .banner-ad-a img{
 			width: 1226px;
 			height: 460px;
 		}
-		.home .banner-ad-ul{
+		.banner-ad-ul{
 			position: relative;
 			z-index: 1;
 		}
-		.home .banner-ad-ul-li{
+		.banner-ad-ul-li{
 			cursor: pointer;
 			padding-left: 30px;
 			font-size: 20px;
 			color:#bbbab7;
 		}
-		.home .banner-ad-ul-li a{
+		.banner-ad-ul-li a{
 			color: #fff;
 		}
-		.home .banner-ad-ul-li i{
+		.banner-ad-ul-li i{
 			margin-right: 15px;
 			float: right;
 		}
-		.home .banner .banner-span{
+		.banner .banner-span{
 			position: absolute;
 			top: 50%;
 			margin-top: -40px;
@@ -60,20 +62,22 @@
 			line-height: 80px;
 			cursor: pointer;
 		}
-		.home .banner .banner-span-left{
+		.banner .banner-span-left{
+			z-index: 2;
 			left: 234px;
 		}
-		.home .banner .banner-span-right{
-			right: 0px;
+		.banner .banner-span-right{
+			z-index: 2;
+			right: 300px;
 		}
-		.home .banner .banner-point{
+		.banner .banner-point{
 			position: absolute;
-			right: 10px;
+			right: 400px;
 			bottom: 10px;
 			width:100px;
 			height:20px;
 		}
-		.home .banner .banner-point .banner-point-li{
+		.banner .banner-point .banner-point-li{
 			float: left;
 			list-style: none;
 			width: 8px;
@@ -84,33 +88,57 @@
 			border:2px solid #999;
 			background:#666;
 			cursor: pointer;
+			z-index: 2;
 		}
-		.home .banner .banner-point .banner-point-li:hover{
+		.banner .banner-point .banner-point-li:hover{
 			background: #fff;
 		}
-		.home .banner .banner-span:hover{
+		.banner .banner-span:hover{
 			background: #222;
 			color:#fff;
 		}
-		.home .banner-ad-ul-li:hover{
+		.banner-ad-ul-li:hover{
 			background: #ff6700;
+		}
+		.banner .banner-point .active{
+			background: #fff;
 		}
 	</style>
 </head>
 <body>
 	<div class="banner">
-				<div class="banner-ad">
-					<a class="banner-ad-a" href="#"><img src="images/b1.jpg" alt=""></a>
-					<a class="banner-ad-a" href="#"><img src="images/b2.jpg" alt=""></a>
-					<a class="banner-ad-a" href="#"><img src="images/b3.jpg" alt=""></a>
-				</div>
-				<span class="banner-span-left banner-span"><i class="iconfont">&#xe627;</i></span>
-				<span class="banner-span-right banner-span"><i class="iconfont">&#xe622;</i></span>
-				<ul class="banner-point">
-					<li class="banner-point-li"></li>
-					<li class="banner-point-li"></li>
-					<li class="banner-point-li"></li>
-				</ul>
-			</div>
+		<div class="banner-ad" id="box">
+			<a class="banner-ad-a" href="#"><img src="images/b1.jpg" alt=""></a>
+			<a class="banner-ad-a" href="#"><img src="images/b2.jpg" alt=""></a>
+			<a class="banner-ad-a" href="#"><img src="images/b3.jpg" alt=""></a>
+		</div>
+		<span class="banner-span-left banner-span" id="left"><i>&lt;</i></span>
+		<span class="banner-span-right banner-span" id="right"><i>&gt;</i></span>
+		<ul class="banner-point">
+			<li class="banner-point-li active"></li>
+			<li class="banner-point-li"></li>
+			<li class="banner-point-li"></li>
+		</ul>
+	</div>
 </body>
+<script>
+	var oBox = document.getElementById('box');
+	var oLeft = document.getElementById('left');
+	var oRight = document.getElementById('right');
+	var Images = oBox.querySelectorAll('.banner-ad-a');
+	var oBtn = document.querySelectorAll('.banner-point-li');
+
+
+	for(var i = 0 ; i < oBtn.length ; i++){
+		oBtn[i].index = i;
+		oBtn[i].onclick = function(){
+			for(var j = 0 ; j < oBtn.length ; j++){
+				oBtn[j].className ='';
+				Images[j].style.zIndex = '0';
+			}
+			this.className = 'active';
+			Images[this.index].style.zIndex = '1';
+		}
+	}
+</script>
 </html>

@@ -3,8 +3,60 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#left{
+			float: left;
+			width: 150px;
+			height: 400px;
+			background-color: yellow;
+			margin-left: 100px;
+			margin-top: 100px;
+		}
+		#right{
+			float: left;
+			width: 400px;
+			height: 400px;
+			background-color: skyblue;
+			margin-left: 20px;
+			margin-top: 100px;
+			display: none;
+		}
+	</style>
 </head>
 <body>
-	
+	 <div id="left">
+	 	
+	 </div>
+	 <div id="right">
+	 	
+	 </div>
 </body>
+<script>
+	var LeftBox = document.getElementById('left');
+	var RightBox = document.getElementById('right');
+	var timer = 0;
+	function close(){
+		RightBox.style.display = 'none';
+	}
+
+	function open(){
+		RightBox.style.display = 'block';
+	}
+
+	LeftBox.onmouseout = RightBox.onmouseout = function(){
+		timer = setTimeout(close,500);
+		
+	}
+
+	LeftBox.onmouseover = RightBox.onmouseover = function(){
+		clearTimeout(timer);
+		open();
+	}
+	
+
+</script>
 </html>
