@@ -63,11 +63,11 @@
 			cursor: pointer;
 		}
 		.banner .banner-span-left{
-			z-index: 2;
+			z-index: 100;
 			left: 234px;
 		}
 		.banner .banner-span-right{
-			z-index: 2;
+			z-index: 100;
 			right: 300px;
 		}
 		.banner .banner-point{
@@ -76,6 +76,7 @@
 			bottom: 10px;
 			width:100px;
 			height:20px;
+			z-index: 100;
 		}
 		.banner .banner-point .banner-point-li{
 			float: left;
@@ -88,7 +89,7 @@
 			border:2px solid #999;
 			background:#666;
 			cursor: pointer;
-			z-index: 2;
+			z-index: 100;
 		}
 		.banner .banner-point .banner-point-li:hover{
 			background: #fff;
@@ -108,7 +109,7 @@
 <body>
 	<div class="banner">
 		<div class="banner-ad" id="box">
-			<a class="banner-ad-a" href="#"><img src="images/b1.jpg" alt=""></a>
+			<a class="banner-ad-a" href="#" style="z-index: 99"><img src="images/b1.jpg" alt=""></a>
 			<a class="banner-ad-a" href="#"><img src="images/b2.jpg" alt=""></a>
 			<a class="banner-ad-a" href="#"><img src="images/b3.jpg" alt=""></a>
 		</div>
@@ -127,18 +128,60 @@
 	var oRight = document.getElementById('right');
 	var Images = oBox.querySelectorAll('.banner-ad-a');
 	var oBtn = document.querySelectorAll('.banner-point-li');
-
-
-	for(var i = 0 ; i < oBtn.length ; i++){
+	var oTab = document.querySelector('.banner');
+	var now = 0;
+	var timer = 0;
+	function test(){
+		for(var i = 0;i<Images.length;i++){
+			Images[i].style.zIndex = '0';
+			oBtn[i].className = 'banner-point-li';
+		}
+		Images[now].style.zIndex = '99';
+		oBtn[now].className = 'banner-point-li active';
+	}
+	oRight.onclick = function(){
+		now++;
+		if (now >= Images.length) {
+			now = 0;
+		}
+		test();
+	}
+	oLeft.onclick = function(){
+		now--;
+		if (now < 0) {
+			now = Images.length - 1;
+		}
+		test();
+	}
+	oBtn.onclick = function(){
+		oBtn[i].index = i;
+		for(var i = 0;i<oBtn.length;i++){
+			
+			oBtn[i].className = 'banner-point-li';
+			
+		}
+		this.className = 'banner-point-li active';
+		test();
+	}
+	for(var i = 0;i<oBtn.length;i++){
 		oBtn[i].index = i;
 		oBtn[i].onclick = function(){
-			for(var j = 0 ; j < oBtn.length ; j++){
-				oBtn[j].className ='';
-				Images[j].style.zIndex = '0';
-			}
-			this.className = 'active';
-			Images[this.index].style.zIndex = '1';
+			now = this.index;
+			test();
 		}
 	}
+	function auto(){
+		now++;
+		if (now >= Images.length) {
+			now = 0;
+		}
+		test();
+	}
+	timer = setInterval(auto,1000);
+
+	oTab.onmouseover = function(){
+		clearInterval(timer)
+	}
+	//oTab.onmouseout = setInterval(auto,1000);
 </script>
 </html>
