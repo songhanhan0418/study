@@ -182,6 +182,9 @@
 	oTab.onmouseover = function(){
 		clearInterval(timer)
 	}
-	//oTab.onmouseout = setInterval(auto,1000);
+	oTab.onmouseout = function(){
+		timer = setInterval(auto,1000);
+		test();
+	}
 </script>
 </html>
