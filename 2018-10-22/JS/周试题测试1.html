@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*var a = 10;
+	console.log(a.toString(2));*/  //参数意思是改为2进制；
+	/*function test(){
+		console.log(a);
+		function test1(){
+			var a = 2;
+		}
+		test1();
+	}
+	test();*/ //报错；
+	var a = 2;
+	function test(){
+		console.log(a);
+		var a =1;
+		function test2(){
+			console.log(a);
+		}
+		test2();
+	}
+	test();
+	
+</script>
+</html>
