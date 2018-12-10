@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#main{
+			position: absolute;
+			left: -500px;
+			top: 50px;
+			width: 500px;
+			height: 500px;
+			background: gray;
+		}
+		#nav{
+			position: absolute;
+			left: 500px;
+			top:0;
+			width: 100px;
+			height: 500px;
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="nav"></div>
+	</div>
+</body>
+<script src="js/animate.js"></script>
+<script>
+	var oMain = document.getElementById('main');
+	var oNav = document.getElementById('nav');
+	oNav.onmouseover = function(){
+		animate(oMain,'left','0')
+	}
+	oNav.onmouseout = function(){
+		animate(oMain,'left','-500')
+	}
+	oMain.onmouseover = function(){
+		animate(oMain,'left','0')
+	}
+	oMain.onmouseout = function(){
+		animate(oMain,'left','-500')
+	}
+</script>
+</html>

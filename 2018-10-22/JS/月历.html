@@ -8,51 +8,50 @@
 			margin: 0;
 			padding: 0;
 		}
-		.clearfix:after{
-			display: block;
-			clear: both;
-			visibility: hidden;
-			height: 0;
-			content: '';
-		}
-		.clearfix{
-			*zoom:1;
-		}
 		.box{
 			width: 380px;
-			height: 600px;
-			margin:50px auto;
-			background: #ccc;
+			height: 500px;
+			background: gray;
+			margin:100px auto;
+		}
+		ul{
+			overflow: hidden;
+			list-style: none;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		li{
 			float: left;
-			list-style: none;
-
 			width: 100px;
 			height: 100px;
-			line-height: 100px;
 			margin:20px 0 0 20px;
-			background: #000;
+			box-sizing: border-box;
+			background: black;
 			border: 1px solid #000;
-			font-size: 30px;
 			color: #fff;
+			font-size: 25px;
 			text-align: center;
-
+			line-height: 100px;
 		}
 		.content{
-			width: 100%;
-			height: 100px;
+			width: 380px;
+			background: gray;
+		}
+		h1{
+			margin-left: 20px;
+		}
+		p{
 			margin-left: 20px;
 		}
 		.active{
 			background: #fff;
-			color: #000;
+			color:#000;
 		}
 	</style>
 </head>
 <body>
 	<div class="box">
-		<ul class="clearfix">
+		<ul>
 			<li class="active">1</li>
 			<li>2</li>
 			<li>3</li>
@@ -67,22 +66,26 @@
 			<li>12</li>
 		</ul>
 		<div class="content">
+			<h1>1月</h1>
+			<p>吃饭</p>
 		</div>
 	</div>
 </body>
 <script>
 	var aMonth = document.getElementsByTagName('li');
 	var oContent = document.querySelector('.content');
-	var aContent = ["吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步","吃饭","睡觉","跑步"]
-	oContent.innerHTML = "<h2>1月</h2><p>"+aContent[0]+"</p>"
-	for(var i = 0;i < aMonth.length;i++){
+	var aContent = ['散步','睡觉','打豆豆','跑步','吃饭','睡觉','打豆豆','跑步','吃饭','睡觉','打豆豆','跑步']
+	oContent.innerHTML = '<h1>1月</h1>'+'<p>'+aContent[0]+'</p>';
+
+	for(var i = 0;i<aMonth.length;i++){
 		aMonth[i].index = i;
+
 		aMonth[i].onmouseover = function(){
-			for(var j = 0;j < aMonth.length;j++){
-			aMonth[j].className = '';
-		}
+			for(var j =0;j<aMonth.length;j++){
+				aMonth[j].className = '';
+			}
 			this.className = 'active';
-			oContent.innerHTML = "<h2>"+(this.index+1)+"月</h2><p>"+aContent[this.index]+"</p>"
+			oContent.innerHTML =  '<h1>'+(this.index+1)+'月</h1>'+'<p>'+aContent[this.index]+'</p>';
 		}
 	}
 </script>

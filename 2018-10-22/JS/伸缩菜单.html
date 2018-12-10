@@ -8,38 +8,32 @@
 			margin: 0;
 			padding: 0;
 		}
-		.box{
-			width: 100px;
-			height: 100px;
-			background: red;
-			opacity: 0.5;
-			margin-top: 50px;
-			text-align: center;
-			line-height: 100px;
-		}
-		.box2{
+		#main{
 			position: absolute;
-			left: 300px;
-			top: 0;
-			width: 1px;
+			left: -500px;
+			top: 50px;
+			width: 500px;
 			height: 500px;
-			background: black;
+			background: gray;
+		}
+		#nav{
+			position: absolute;
+			left: 500px;
+			top:0;
+			width: 100px;
+			height: 500px;
+			background: skyblue;
 		}
 	</style>
 </head>
 <body>
-	<div id="box1" class="box">变宽</div>
-	<div id="box2" class="box">变高</div>
-	<div id="box3" class="box">变红</div>
-	<div class="box2"></div>
-	
+	<div id="main">
+		<div id="nav"></div>
+	</div>
 </body>
 <script>
-	var oBox1 = document.getElementById('box1');
-	var oBox2 = document.getElementById('box2');
-	var oBox3 = document.getElementById('box3');
-
-
+	var oMain = document.getElementById('main');
+	var oNav = document.getElementById('nav');
 	function animate(obj,attr,target){
 		var iSpeed = 0;
 		clearInterval(obj.timer);
@@ -66,33 +60,20 @@
 				}else{
 					obj.style[attr] = current + iSpeed + 'px';
 				}
-				
 			}
-			console.log(current,iSpeed)
 		},30);
 	}
-
-
-
-	oBox1.onmouseover = function (){
-		animate(oBox1,'width',300);
+	oNav.onmouseover = function(){
+		animate(oMain,'left','0')
 	}
-	oBox1.onmouseout = function (){
-		animate(oBox1,'width',100);
+	oNav.onmouseout = function(){
+		animate(oMain,'left','-500')
 	}
-	oBox2.onmouseover = function (){
-		animate(oBox2,'height',300);
+	oMain.onmouseover = function(){
+		animate(oMain,'left','0')
 	}
-	oBox2.onmouseout = function (){
-		animate(oBox2,'height',100);
-	}
-	oBox3.onmouseover = function(){
-		animate(oBox3,'opacity',100);
-
-	}
-	oBox3.onmouseout = function(){
-		animate(oBox3,'opacity',50);
-
+	oMain.onmouseout = function(){
+		animate(oMain,'left','-500')
 	}
 </script>
 </html>
