@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.5;
+			margin-top: 50px;
+			text-align: center;
+			line-height: 100px;
+		}
+		.box2{
+			position: absolute;
+			left: 300px;
+			top: 0;
+			width: 1px;
+			height: 500px;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1" class="box">变宽</div>
+	<div id="box2" class="box">变高</div>
+	<div id="box3" class="box">变红</div>
+	<div class="box2"></div>
+	
+</body>
+<script src="js/donghua.js"></script>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+
+	oBox1.onmouseover = function (){
+		animate(oBox1,'width',300,false,function(){
+			animate(oBox1,'height',300,false,function(){
+				animate(oBox1,'opacity',100);
+			});
+		});
+	}
+	oBox1.onmouseout = function (){
+		animate(oBox1,'opacity',50,false,function(){
+			animate(oBox1,'height',100,false,function(){
+				animate(oBox1,'width',100,false);
+			});
+		});
+	}
+	oBox2.onmouseover = function (){
+		animate(oBox2,'height',300);
+	}
+	oBox2.onmouseout = function (){
+		animate(oBox2,'height',100);
+	}
+	oBox3.onmouseover = function(){
+		animate(oBox3,'opacity',100);
+
+	}
+	oBox3.onmouseout = function(){
+		animate(oBox3,'opacity',50);
+	}
+</script>
+</html>

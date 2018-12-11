@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		#box{
+			position: absolute;
+			top:699px;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="js/donghua.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+
+	window.onresize = window.onload = window.onscroll = function(){
+		var h2 = window.innerHeight - 100;
+		var h = h2/2 + getScrollTop();
+		animate(oBox,'top',h);
+	}
+</script>
+</html>
