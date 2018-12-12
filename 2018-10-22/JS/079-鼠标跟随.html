@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		body{
+			height: 3000px;
+			width: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="js/jianrong.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	document.onmousemove = function(ev){
+		console.log( ev.clientX + getScrollLeft(),ev.clientY + getScrollTop());
+		oBox.style.left = ev.clientX + getScrollLeft()-(oBox.offsetWidth)/2 +'px';
+		oBox.style.top = ev.clientY + getScrollTop()-(oBox.offsetHeight)/2 +'px';
+	}
+</script>
+</html>
