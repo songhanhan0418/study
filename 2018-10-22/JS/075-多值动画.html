@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.5;
+			margin-top: 50px;
+			text-align: center;
+			line-height: 100px;
+		}
+		.box2{
+			position: absolute;
+			left: 300px;
+			top: 0;
+			width: 1px;
+			height: 500px;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1" class="box">变宽</div>
+
+	
+</body>
+<script src="js/duozhi.js"></script>
+<script>
+	var oBox1 = document.getElementById('box1');
+
+
+	oBox1.onmouseover = function (){
+		animate(oBox1,{width:400,height:400,opacity:100},true,function(){
+			alert('a');
+		});
+	}
+</script>
+</html>

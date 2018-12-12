@@ -29,7 +29,7 @@
 	var oBox = document.getElementById('box');
 
 	window.onresize = window.onload = window.onscroll = function(){
-		var h2 = window.innerHeight - 100;
+		var h2 = window.innerHeight - oBox.offsetHeight;
 		var h = h2/2 + getScrollTop();
 		animate(oBox,'top',h);
 	}

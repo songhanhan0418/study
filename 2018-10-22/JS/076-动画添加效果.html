@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		li{
+			height: 0;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="box" cols="30" rows="10"></textarea>
+	<button id="btn">发布</button>
+	<ul id="ul1">
+	</ul>
+</body>
+<script src="js/duozhi.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	var oUl = document.getElementById('ul1');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oBox.value;
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oBox.value = '';
+		animate(oLi,{height:40,opacity:100},true)
+
+	}
+
+
+</script>
+</html>

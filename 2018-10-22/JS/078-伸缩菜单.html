@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#btn{
+			user-select: none;
+		}
+		#menu{
+			width: 100px;
+			height: 500px;
+			background: gray;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">菜单</button>
+	<div id="menu"></div>
+</body>
+<script>
+	var oBtn =document.getElementById('btn');
+	var oMenu =document.getElementById('menu');
+	oBtn.addEventListener('click',function(){
+		oMenu.style.display ='block';
+		event.stopPropagation();
+	},false);
+	oMenu.addEventListener('click',function(){
+		event.stopPropagation();
+	},false);
+	document.documentElement.addEventListener('click',function(){
+		oMenu.style.display ='none';
+	},false)
+</script>
+</html>

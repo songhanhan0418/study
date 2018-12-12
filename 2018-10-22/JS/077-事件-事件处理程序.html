@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">点击</button>
+	<button id="btn2">移除事件</button>
+
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	function sayHi(){
+		alert('hi');
+	}
+	function sayHe(){
+		alert('he');
+	}
+	function sayHa(){
+		alert('ha');
+	}
+	oBtn1.addEventListener('click',sayHi,false);
+	oBtn1.addEventListener('click',sayHe,false);
+	oBtn1.addEventListener('click',sayHa,false);
+
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',sayHa,false);
+	},false);
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',sayHi,false);
+	},false);
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',sayHe,false);
+	},false);
+</script>
+</html>

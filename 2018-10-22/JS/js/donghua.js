@@ -1,4 +1,4 @@
-function animate(obj,attr,target,isLinear,fn){
+	function animate(obj,attr,target,isLinear,fn){
 		if(isLinear == undefined){
 			isLinear = true;
 		}
@@ -49,5 +49,5 @@ function animate(obj,attr,target,isLinear,fn){
 
 
 	function getScrollTop(){
-	return  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;	
-}
+		return  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;	
+	}
