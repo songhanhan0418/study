@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn">提交</button>
+	<input id="box" type="text">
+	<ul id="ul1">
+		<li>111</li>
+	</ul>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oBox.value;
+		oBox.value = '';
+		oUl.insertBefore(oLi,oUl.firstChild);
+	}
+	oBox.onkeydown = function(ev){
+		if(ev.keyCode == 13 && ev.ctrlKey){
+			oBtn.onclick();
+		}
+		console.log(ev.keyCode)
+	}
+</script>
+</html>

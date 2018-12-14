@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#main{
+			position: relative;
+			margin:100px;
+			background: gray;
+		}
+		#bigBox{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 450px;
+			height: 450px;
+
+		}
+		#bigBox img{
+			width: 450px;
+			height: 450px;
+		}
+		#mask{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 250px;
+			height: 250px;
+			background: rgba(240,240,0,0.5);
+			cursor: move;
+			display: none;
+		}
+		#smallBox{
+			position: absolute;
+			top: 455px;
+			left: 0;
+			width: 450px;
+		}
+		#smallBox li{
+			width: 54px;
+			height: 54px;
+			float: left;
+			list-style: none;
+			opacity: 0.5;
+		}
+		#smallBox li img{
+			width: 54px;
+			height: 54px;
+		}
+		#largeBox{
+			position: absolute;
+			left: 452px;
+			top: 0;
+			width: 500px;
+			height: 5	00px;
+			overflow: hidden;
+			display: none;
+		}
+		#largeBox img{
+			width: 800px;
+			height: 800px;
+		}
+		#smallBox li.active{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="bigBox">
+			<img src="images/wow1.jpg" alt="">
+			<span id="mask"></span>
+		</div>
+		<ul id="smallBox">
+			<li class="active"><img src="images/wow1.jpg" alt=""></li>
+			<li><img src="images/wow2.jpg" alt=""></li>
+			<li><img src="images/wow3.jpg" alt=""></li>
+		</ul>
+		<div id="largeBox">
+			<img src="images/wow1.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var oMain = document.getElementById('main')
+	var oSmallBox = document.getElementById('smallBox');
+	var aSmallLi = document.querySelectorAll('#smallBox li');
+	var aSmallImg = document.querySelectorAll('#smallBox img');
+	var oMask = document.getElementById('mask');
+
+	var oBigBox = document.getElementById('bigBox');
+	var oBigImg = document.querySelector('#bigBox img');
+
+	var oLargeBox = document.getElementById('largeBox');
+	var oLargeImg = document.querySelector('#largeBox img')
+	for(var i = 0;i<aSmallLi.length;i++){
+		aSmallLi[i].index = i;
+		aSmallLi[i].onmouseover = function(){
+			for(var j = 0;j<aSmallLi.length;j++){
+				aSmallLi[j].className = '';
+			}
+			this.className ='active';
+			oBigImg.src = "images/wow"+(this.index+1)+".jpg";
+			oLargeImg.src = "images/wow"+(this.index+1)+".jpg";
+		}
+	}
+	oBigBox.onmouseover = function(){
+		oMask.style.display = 'block';
+		oLargeBox.style.display = 'block';
+		var l = 0,t = 0;
+		oMask.onmousemove = function(ev){
+			l =ev.clientX - oMain.offsetLeft - oMask.offsetWidth * 0.5;
+			t =ev.clientY - oMain.offsetTop - oMask.offsetHeight * 0.5;
+			if(l < 0){
+				l = 0;
+			}else if(l > oBigBox.offsetWidth - oMask.offsetWidth){
+				l =oBigBox.offsetWidth - oMask.offsetWidth ;
+			}
+			if(t < 0){
+				t = 0;
+			}else if(t > oBigBox.offsetHeight - oMask.offsetHeight){
+				t =oBigBox.offsetHeight - oMask.offsetHeight ;
+			}
+			oMask.style.left = l + 'px';
+			oMask.style.top = t + 'px';
+			var percentX = 
+		}
+		oBigBox.onmouseout = function(){
+			oMask.style.display = 'none';
+			oLargeBox.style.display = 'none';
+		}
+	}
+</script>
+</html>
