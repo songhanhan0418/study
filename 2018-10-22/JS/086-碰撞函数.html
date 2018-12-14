@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		#box2{
+			position: absolute;
+			left: 400px;
+			top: 150px;
+			width: 500px;
+			height: 500px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	function checkBum(obj1,obj2){
+		if(obj1.offsetLeft+obj1.offsetWidth > obj2.offsetLeft
+		&&obj1.offsetTop+obj1.offsetHeight > obj2.offsetTop
+		&&obj2.offsetLeft+obj2.offsetWidth > obj1.offsetLeft
+		&&obj2.offsetTop+obj2.offsetHeight > obj1.offsetTop){
+			return true;
+		}                             
+		return false;
+	}
+	oBox1.onmousedown = function(ev){
+		var disX = ev.clientX - oBox1.offsetLeft;
+		var disY = ev.clientY - oBox1.offsetTop;
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY - disY;
+			if(l < 10){
+				l = 0;
+			}else if(l + 10 > window.innerWidth - oBox1.offsetWidth){
+				l = window.innerWidth - oBox1.offsetWidth
+			}
+			if(t < 10){
+				t = 0;
+			}else if(t + 10 > window.innerHeight - oBox1.offsetHeight){
+				t = window.innerHeight - oBox1.offsetHeight
+			}
+			oBox1.style.left = l + 'px';
+			oBox1.style.top = t + 'px';
+			if(checkBum(oBox1,oBox2)){
+				oBox2.style.background = 'blue';
+			}else{
+				oBox2.style.background = 'gray';
+			}
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>
