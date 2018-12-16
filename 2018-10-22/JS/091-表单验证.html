@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		form{
+			width: 500px;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<form action="http://www.baidu.com" id="form1">
+		<input type="text" id="txt">
+		<input type="submit" id="sub">
+		<input type="reset" id="res">
+		<p id="msg"></p>
+	</form>
+</body>
+<script>
+	var oForm = document.getElementById('form1');
+	var oTxt = document.getElementById('txt');
+	var oSub = document.getElementById('sub');
+	var oRes = document.getElementById('res');
+	var oMsg = document.getElementById('msg');
+	oTxt.onfocus = function(){
+		oMsg.style.color = 'red';
+		oMsg.innerHTML = '请输入3-6个字符';
+	}
+	oTxt.onblur = function(){
+		oMsg.style.color = 'green';
+		oMsg.innerHTML = '输入完成';
+	}
+	oTxt.onchange = function(){
+		console.log('aa');
+	}
+</script>
+</html>

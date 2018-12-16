@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1110<a href="javascript:;" class="del">删除</a></li>
+		<li>1110<a href="javascript:;" class="del">删除</a></li>
+		<li>1110<a href="javascript:;" class="del">删除</a></li>
+		<li>1110<a href="javascript:;" class="del">删除</a></li>
+		<li>1110<a href="javascript:;" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+
+	oUl.addEventListener('click',function(ev){
+		if(ev.target.className == 'del'){
+			oUl.removeChild(ev.target.parentNode);	
+		}
+	},false)
+</script>
+</html>

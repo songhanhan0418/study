@@ -57,11 +57,14 @@
 			left: 452px;
 			top: 0;
 			width: 500px;
-			height: 5	00px;
+			height: 500px;
 			overflow: hidden;
 			display: none;
 		}
 		#largeBox img{
+			position: absolute;
+			left: 0;
+			top: 0;
 			width: 800px;
 			height: 800px;
 		}
@@ -128,7 +131,16 @@
 			}
 			oMask.style.left = l + 'px';
 			oMask.style.top = t + 'px';
-			var percentX = 
+			var percentX =l/ (oBigBox.offsetWidth-oMask.offsetWidth);
+			var percentY =t/ (oBigBox.offsetHeight-oMask.offsetHeight);
+			
+			console.log(percentX);
+			console.log(percentY);
+			oLargeImg.style.left =(oLargeBox.offsetWidth - oLargeImg.offsetWidth)*percentX+ 'px';
+			console.log(oLargeImg.style.left);
+			oLargeImg.style.top = (oLargeBox.offsetHeight - oLargeImg.offsetHeight)*percentY + 'px';
+			console.log(oLargeImg.style.top);
+
 		}
 		oBigBox.onmouseout = function(){
 			oMask.style.display = 'none';
