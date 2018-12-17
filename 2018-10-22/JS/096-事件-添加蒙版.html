@@ -3,8 +3,59 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#black{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 1080px;
+			background: rgba(200,200,200,0.5);
+			display: none;
+		}
+		#login-box{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width:300px;
+			height: 300px;
+			margin-left: -150px;
+			margin-top: -150px;
+			background: #fff;
+			display: none;
+		}
+	</style>
 </head>
 <body>
-	<div id="loginBox"></div>
+	<div id="black"></div>
+	<button id="btn1">登录</button>
+	<div id="login-box">
+		<input type="text">
+		<button id="btn2">登录</button>
+	</div>
+
 </body>
+<script>
+	var oBlack = document.getElementById('black');
+	var oBtn1 = document.getElementById('btn1');
+	var oLoginBox = document.getElementById('login-box');
+	var oBtn2 = document.getElementById('btn2');
+
+	btn1.onclick = function(){
+		oLoginBox.style.display = 'block';
+		oBlack.style.display = 'block';
+		event.stopPropagation();
+	}
+	document.onclick = function(){
+		oLoginBox.style.display = 'none';
+		oBlack.style.display = 'none';		
+	}
+	oLoginBox.onclick = function(){
+		event.stopPropagation();
+	}
+</script>
 </html>

@@ -29,15 +29,24 @@
 	var oRes = document.getElementById('res');
 	var oMsg = document.getElementById('msg');
 	oTxt.onfocus = function(){
-		oMsg.style.color = 'red';
+		oMsg.style.color = 'green';
 		oMsg.innerHTML = '请输入3-6个字符';
 	}
-	oTxt.onblur = function(){
-		oMsg.style.color = 'green';
-		oMsg.innerHTML = '输入完成';
+	/*oTxt.onblur = function(){
+
 	}
-	oTxt.onchange = function(){
+*/	oTxt.onchange = function(){
 		console.log('aa');
+	}
+	oTxt.oninput = function(){
+		var len = oTxt.value.length;
+		if(len <3 || len > 6){
+			oMsg.style.color = 'red';
+			oMsg.innerHTML = '输入有误';
+		}else{
+			oMsg.style.color = 'green';
+			oMsg.innerHTML = '输入完成';
+		}
 	}
 </script>
 </html>

@@ -3,8 +3,124 @@
 <head>
 	<meta charset="UTF-8">
 	<title>愤怒小鸟 </title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+			width: 700px;
+			height: 500px;
+			margin:130px auto;
+			border: 1px solid #000;
+		}
+		#bird{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 50px;
+			height: 50px;
+			margin-left: -25px;
+			background: url(images/bird.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.topLine{
+			position: absolute;
+			left: 100%;
+			top: 0;
+			width: 30px;
+			background: green;
+		}
+		.bottomLine{
+			position: absolute;
+			left: 100%;
+			bottom: 0;
+			width: 30px;
+			background: green;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="box">
+		<div id="bird"></div>
+	</div>
 </body>
+<script>
+	var oBird = document.getElementById('bird');
+	var oBox = document.getElementById('box');
+	var BirdTimer = 0,addLineTimer =0,moveLineTimer=0;
+	var iSpeed = 10;
+	var spaceLine = 150;
+	clearInterval(BirdTimer);
+	function getRandom(min,max){
+		return Math.round(min + (max-min)*Math.random());
+	}
+
+	function addLine(){
+		var topLine = document.createElement('div');
+		var bottomLine = document.createElement('div');
+		topLine.className = 'topLine';
+		bottomLine.className = 'bottomLine';
+		var h = getRandom(200,300);
+		topLine.style.height = h + 'px';
+		bottomLine.style.height = oBox.offsetHeight - 2 - h - spaceLine +'px';
+		topLine.leftData = 100;
+		oBox.appendChild(topLine);
+		oBox.appendChild(bottomLine);
+	}
+	clearInterval(addLineTimer);
+	addLineTimer = setInterval(addLine,800);
+	function checkBum(obj1,obj2){
+		if(obj1.offsetLeft+obj1.offsetWidth > obj2.offsetLeft
+		&&obj1.offsetTop+obj1.offsetHeight > obj2.offsetTop
+		&&obj2.offsetLeft+obj2.offsetWidth > obj1.offsetLeft
+		&&obj2.offsetTop+obj2.offsetHeight > obj1.offsetTop)
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
+	moveLineTimer = setInterval(function(){
+		var aTopLine = document.querySelectorAll('.topLine');
+		var aBottomLine = document.querySelectorAll('.bottomLine');
+		for(var i =0;i<aTopLine.length;i++){
+			aTopLine[i].style.left =aBottomLine[i].style.left= aTopLine[i].leftData - 1 +'%';
+			aTopLine[i].leftData = aTopLine[i].leftData - 1;
+			if (checkBum(oBird,aTopLine[i]) || checkBum(oBird,aBottomLine[i])) {
+			Die();
+			}
+			if (aTopLine[i].leftData < -20) {
+				oBox.removeChild(aTopLine[i]);
+				oBox.removeChild(aBottomLine[i]);
+			}
+		}
+	},50)
+
+	BirdTimer = setInterval(function(){
+		var t = oBird.offsetTop + iSpeed;
+		iSpeed +=1; 
+		if (t<0) {
+			t = 2;
+			Die();
+		}else if(t>oBox.offsetHeight -oBird.offsetHeight){
+			t =oBox.offsetHeight -oBird.offsetHeight -2;
+			Die();
+		}
+		oBird.style.top =t + 'px' ;
+		console.log('move');
+
+	},40)
+	function Die(){
+		clearInterval(BirdTimer);
+		clearInterval(addLineTimer);
+		clearInterval(moveLineTimer);
+		alert('GAME OVER')
+	}
+	document.onkeydown = function(){
+		iSpeed -= 10;
+	}
+</script>
 </html>
