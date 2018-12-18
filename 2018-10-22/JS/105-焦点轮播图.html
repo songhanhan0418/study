@@ -5,9 +5,35 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<div id="box"></div>
 </body>
 <script>
-	
+	function Carousel(oprations){
+		//获取属性
+		this.oBox = document.getElementById(oprations.id);
+		//初始化HTML
+		this.init();
+
+	}
+
+	Carousel.prototype.init = function(){
+		this.oUlImg = document.createElement('ul');
+		this.
+
+
+
+
+
+
+		this.oBox.appendChild(oUlImg);
+	}
+
+
+
+
+	new Carousel({
+		id:'box',
+		aImg:[]
+	})
 </script>
 </html>
