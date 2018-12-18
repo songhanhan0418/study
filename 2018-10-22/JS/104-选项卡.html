@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.tab-list{
+			width: 400px;
+			height: 100px;
+			list-style: none;
+			float: left;
+			overflow: hidden;
+		}
+		.tab-list li{
+			float: left;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+		.container{
+			list-style: none;
+			overflow: hidden;
+		}
+		.container li{
+			width: 400px;
+			height: 600px;
+			font-size: 80px;
+			text-align: center;
+			line-height: 600px;
+			border: 1px solid #000;
+			display: none;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab-list" class="tab-list">
+		<li class="active">热门</li>
+		<li>电视</li>
+		<li>电影</li>
+		<li>家具</li>
+	</ul>
+	<ul id="container" class="container">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<ul id="tab-list2" class="tab-list">
+		<li class="active">热门</li>
+		<li>电视</li>
+		<li>电影</li>
+		<li>家具</li>
+	</ul>
+	<ul id="container2" class="container">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	/*
+	var oBtn = document.querySelectorAll('#tab-list li');
+	var oContainer = document.querySelectorAll('#container li');
+	//console.log(oContainer);
+	for(var i = 0 ; i < oBtn.length ; i++){
+		oBtn[i].index = i;
+		oBtn[i].onclick = function(){
+			for(var j = 0 ; j < oBtn.length ; j++){
+				oBtn[j].className = '';
+				oContainer[j].style.display = 'none';
+			}
+			this.className = 'active';
+			oContainer[this.index].style.display = 'block';
+		}
+	}
+*/
+	function Tab(list,container){
+		//罗列属性
+		this.aBtn = document.querySelectorAll(list);
+		this.aContainer = document.querySelectorAll(container);
+		//绑定事件
+		this.blndEvent();
+	}
+
+	Tab.prototype.blndEvent = function(){
+		var _this = this;
+		for(i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onclick = function(){
+				_this.fnclick(this);
+			}
+		}
+		console.log('blndEvent',this);
+	}
+	Tab.prototype.fnclick = function(oBtn){
+		console.log(this);
+		for(var i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].className = '';
+			this.aContainer[i].style.display = 'none';			
+		}
+		oBtn.className = 'active';
+		this.aContainer[oBtn['index']].style.display = 'block'
+	}
+
+
+
+	var son1 = new Tab('#tab-list li','#container li');
+	var son2 = new Tab('#tab-list2 li','#container2 li');
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+			if(!this.showName){
+				Person.prototype.showName = function(){
+				console.log("I am "+this.name);
+				}			
+			}
+			if(!this.showAge){
+				Person.prototype.showAge = function(){
+					console.log("I am "+this.age + " years old");
+				}
+			}
+		}
+
+		var Person1 = new Person('Tom',18);
+		Person1.showName();
+		Person1.showAge();
+		var Person2 = new Person('Leo',28);
+		Person2.showName();
+		Person2.showAge();
+		console.log(Person1.showName == Person2.showName)
+</script>
+</html>
