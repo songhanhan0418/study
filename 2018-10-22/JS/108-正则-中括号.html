@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'jk89你好';
+	var reg = /[a-z]/g;
+	var reg2 = /[\u4e00-\u9fa5]/g;
+
+	console.log(str.replace(reg2,'*'));
+	function getLength(){
+		return str.replace(reg2,'aa').length;
+	}
+	console.log(getLength())
+
+</script>
+</html>
