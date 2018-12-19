@@ -11,14 +11,14 @@
 <script>
 	var oTxt = document.getElementById('txt');
 	var oBtn = document.getElementById('btn');
-
+ 
 	oBtn.onclick = function(){
 		//密码(以字母开头,长度在6~12之间,只能包含字母、数字和下划线)
 		var reg = /[a-z]\w{5,11}/g;
 		if(reg.test(oTxt.value)){
-			alert('合法')	
+			alert('合法');
 		}else{
-			alert('不合法')
+			alert('不合法');
 		}
 	}
 </script>
