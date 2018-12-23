@@ -5,12 +5,17 @@
 	<title>Document</title>
 </head>
 <body>
-	<form action=""></form>
+	<form action="">
+		<input type="text" name="username">
+		<input type="password" name="password">
+	</form>
 	<form action=""></form>
 	<form action=""></form>
 	<form action=""></form>
 </body>
 <script>
 	console.log(document.forms);
+	console.log(document.forms[0].elements.password)
+	console.log(document.forms[0].password)
 </script>
 </html>

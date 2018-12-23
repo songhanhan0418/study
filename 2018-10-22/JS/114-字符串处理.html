@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+		/*
+		var str = 'good baby,have a good day';
+		console.log(str.search(/good/));//0
+		console.log(str.search(/good/g));//0
+		console.log(str.search(/good/g));//0
+		*/
+		var reg = /\d{4}-\d{2}-\d{2}/g;
+		var str = 'a2018-05-10b2019-06-10c';
+		console.log(str.match(reg));//["2018-05-10", "2019-06-10"]
+</script>
+</html>
