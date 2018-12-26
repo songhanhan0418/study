@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var Person = function(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.LEGS = 2;
+	Person.prototype.showName = function(){
+		console.log('aa');
+	}
+	var p1 = new Person('Tom',18);
+	var p2 = new Person('Leo',28);
+
+	p1.EYES = 2;
+	delete p2.LEGS;
+	if(p1.hasOwnProperty('EYES')){
+		console.log(p1.EYES);
+	}
+	if(p1.EYES){
+		console.log(p1.EYES);
+	}
+	function is (obj,attr){
+		return !obj.hasOwnProperty(attr) && (attr in obj)
+	}
+	console.log(is(p1,'EYES'))
+	console.log(is(p2,'LEGS'))
+</script>
+</html>

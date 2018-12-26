@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var Person = function(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.LEGS = 2;
+	Person.prototype.showName = function(){
+		console.log('aa');
+	}
+
+	var p1 = new Person('Tom',18);
+	var p2 = new Person('Leo',28);
+
+	console.log('delete p1.name:::',delete p1.name);
+	console.log('p1.name:::',p1.name)
+	console.log('p1.LEGS:::',p1.LEGS)
+
+	console.log(delete Person.prototype.LEGS)
+
+	console.log('Person.prototype.LEGS:::',Person.prototype.LEGS);
+
+	console.log('p1:::',p1)
+	console.log('p2.LEGS:::',p2.LEGS)
+	console.log('p2:::',p2)
+</script>
+</html>
