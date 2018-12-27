@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+		function person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		person.prototype.showAge = function(){
+			console.log('i am'+this.age+'years old')
+		}
+function student(name,age,major){
+    person.call(this,'Tom',18);//属性的继承
+    this.major = major; //子类的属性
+}
+console.log(person)
+console.log(student)
+student.prototype = person.prototype; //方法的继承
+		student.prototype.showMajor = function(){
+			console.log('i am '+this.major+' years old')
+		}
+var s1 = new student('tom',18,'computer')
+var p1 = new person('leo',88);
+console.log(s1)
+console.log(p1)
+s1.showMajor()
+p1.showMajor()
+</script>
+</html>
