@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Drag(options){
+		//罗列属性
+		this.width = options.width;
+		this.height = options.height;
+
+		this.background = options.background;
+		this.oDiv = null;
+		//初始化
+		this.init();
+	}
+	Drag.prototype.init = function(){
+		this.oDiv = document.createElement('div');
+		document.body.appendChild(this.oDiv);
+		console.log(this.oDiv)
+		this.oDiv.style.width = this.width + 'px' ;
+		this.oDiv.style.height = this.height + 'px';
+		this.oDiv.style.background = this.background;
+	}
+
+	Drag.prototype.fnDown = function(){
+
+	}
+
+	new Drag({
+		width:100,
+		height:100,
+		background:'red'
+	})
+</script>
+</html>

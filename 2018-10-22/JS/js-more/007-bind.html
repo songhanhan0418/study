@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<button id="btn">111</button>
+	</div>
+</body>
+<script>
+	var oDiv = document.querySelector('.box');
+	var oBtn = document.querySelector('#btn');
+	oDiv.onclick = function(){
+		this.style.backgroundColor = 'blue';
+		oBtn.onclick = function(ev){
+			ev.stopPropagation();
+			console.log(this);
+		}.bind(this)
+	}
+</script>
+</html>
