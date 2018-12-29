@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ </head>
+ <body>
+ 	
+ </body>
+ <script>
+	(function(w){
+		function Teacher(name,task){
+			this.name = name;
+			this.student = [];
+			this.task = task;
+		}
+		
+		Teacher.prototype = {
+			construstor:Teacher,
+			bindEvent:function(pe){
+				this.student.push(pe)
+			},
+			publish:function(){
+				for(var i = 0;i<this.student.length;i++){
+					this.student[i].listen(this.task);
+				}
+			}
+		}
+		w.Teacher = Teacher;
+	})(window);
+
+
+	(function(w){
+		function Student(name,teacher){
+			this.name = name;
+			teacher.bindEvent(this)
+		}
+		Student.prototype = {
+			construstor:Student,
+			listen:function(task){
+				console.log(this.name+task);
+			}
+		}
+		w.Student = Student;
+	})(window);
+
+	var t1 = new Teacher('Tom','wwwww');
+	var s1 = new Student('Leo',t1);
+	var s2 = new Student('Mecy',t1);
+	t1.publish();
+	console.log(t1);
+	console.log(s1);
+ </script>
+ </html>
