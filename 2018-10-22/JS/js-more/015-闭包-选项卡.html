@@ -6,12 +6,18 @@
 	<style>
 		li{
 			list-style: none;
+			width: 100px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+		li.active{
+			background-color: red;
 		}
 	</style>
 </head>
 <body>
 	<ul>
-		<li>1</li>
+		<li class="active">1</li>
 		<li>2</li>
 		<li>3</li>
 		<li>4</li>
@@ -23,4 +29,17 @@
 		<li>10</li>
 	</ul>
 </body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	lastIndex = 0;
+	for(var i = 0;i<aLi.length;i++){
+		(function(i){
+			aLi[i].onmouseover = function(){
+				aLi[lastIndex].className = '';
+				this.className = 'active';
+				lastIndex = i;
+			}
+		})(i);
+	}
+</script>
 </html>
