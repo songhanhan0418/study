@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [2,5,8,6,10,55,20];
+	console.log(arr);
+	/*var arr1 = arr.forEach(function(value,index){
+		console.log(value,index);
+	})
+	console.log(arr1);
+	var arr1 = arr.map(function(value,index){
+		console.log(value,index);
+		return value * 10;
+	})
+	console.log(arr1);
+	
+	var arr1 = arr.filter(function(value,index){
+		console.log(value,index);
+		return value>10;
+	})
+	console.log(arr1);
+	
+	var isAllTrue = arr.every(function(value,index){
+		console.log(value,index);
+		return value>10;
+	})
+	console.log(isAllTrue);
+	*/
+	var isHasTrue = arr.some(function(value,index){
+		console.log(value,index);
+		return value>55;
+	})
+	console.log(isHasTrue);
+</script>
+</html>
