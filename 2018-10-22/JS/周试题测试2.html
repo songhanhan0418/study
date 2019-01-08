@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	console.log(1&&2);//2
+	var a = null;
+	console.log(typeof a);//object
+	var user = {
+		count:1,
+		getCount:function(){
+			return this.count;
+		}
+	}
+	console.log(user.getCount());
+	var func = user.getCount;
+	console.log(func());//1 undefine
+	function SSS(name){
+		this.name = name;
+	}
+	var s1 = new SSS('Tom')
+	console.log(s1.name)
+	console.log(s1.legs)//undefine
+</script>
+</html>
