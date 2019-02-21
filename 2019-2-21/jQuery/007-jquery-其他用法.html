@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var obj1 = {name:'Tom',age:18}
+	var obj2 = {name:'Amy'}
+	var obj3 = $.extend(obj1,obj2)
+	console.log(obj3)
+	console.log(obj3 === obj1)
+
+	var obj4 = $.extend({},obj1,obj2)
+	console.log(obj4)
+	console.log(obj4 === obj1)
+
+	var arr1 = [1,2,3]
+	console.log($.isArray(arr1))
+	var arr2 = {0:'aaa',1:'bbb',2:'ccc',length:3}
+	console.log($.isArray(arr2))
+	var aaa = '    a  b c  ';
+	console.log($.trim(aaa))
+	
+</script>
+</html>

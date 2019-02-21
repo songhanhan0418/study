@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3" data-asd='ccc'></div>
+	<div class="div4"></div>
+	<div class="div5"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$('.div2').data('aa','bb')
+	console.log($('.div2').data('aa'))
+	console.log($('.div3').data('asd'))
+</script>
+</html>

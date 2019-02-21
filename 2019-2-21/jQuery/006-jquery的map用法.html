@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+	<div>div9</div>
+	<div>div10</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var arr1 = [2,6,4,9];
+	var aDiv = document.getElementsByTagName('div');
+	var likearr = {0:'aaa',1:'bbb',2:'ccc',length:3}
+
+
+	var res1 = arr1.map(function(value,index){
+		return value
+	})
+	console.log(res1);
+
+	var res2 = $.map(arr1,function(value,index){
+		return value
+	})
+	console.log(res2);
+
+	var res3 = $.map(aDiv,function(value,index){
+		return value
+	})
+	console.log(res3);
+
+	var res4 = $.map(likearr,function(value,index){
+		return value
+	})
+	console.log(res4);
+</script>
+</html>

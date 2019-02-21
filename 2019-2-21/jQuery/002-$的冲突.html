@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(){
+		window.$ = function(){
+			console.log('hello')
+		}
+	})(window);
+</script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	jQuery.noConflict();
+	jQuery(function(){
+		console.log('world')
+	});
+	$();
+</script>
+</html>
