@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		div1
+		<p>ppp1</p>
+	</div>
+	<input type="text" value="aaa">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	console.log($('div').html())
+	console.log($('div').text())
+	//console.log($('div').html('<h1>h111</h1>'))
+	console.log($('div').text('<h1>h111</h1>'))
+	console.log($('input').val('bbb'))
+	console.log($('input').get(0))
+</script>
+</html>

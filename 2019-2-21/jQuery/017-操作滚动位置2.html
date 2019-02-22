@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			overflow: auto;
+		}
+		.son{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<button>点击</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var btn = $('button')[0]
+		console.log($('.father').scrollTop())
+		console.log($('.father').scrollLeft())
+		btn.onclick = function(){
+			console.log($('.father').scrollTop())
+			console.log($('.father').scrollLeft())
+		}
+	})
+</script>
+</html>

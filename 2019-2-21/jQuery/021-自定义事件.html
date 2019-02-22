@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div>123123123</div>
+	<p>111111</p>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('myClick',function(ev,arg){
+			console.log(ev);
+			console.log('myClick',arg);
+		})
+		$('div').trigger('myClick',{name:'tom',age:18})
+		$('p').on('click',function(ev,arg){
+			$('p').css(arg)
+			console.log(ev);
+			console.log('click',arg);
+		})
+		$('p').trigger('click',{color:'red'})
+	})
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.f{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+		}
+		.s{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="f">
+		<div class="s"></div>
+	</div>
+	<a href="http://www.baidu.com">
+		<span>span</span>
+	</a>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.f').on('click',function(){
+			alert('fff')
+		})
+		$('.s').on('click',function(){
+			alert('sss')
+		})
+		$('a').on('click',function(){
+			alert('aaa')
+		})
+		//$('.s').trigger('click')
+		//$('.s').triggerHandler('click')
+		$('span').trigger('click')
+		//$('span').trigger('click')
+		//$('span').trigger('click')
+	})
+</script>
+</html>

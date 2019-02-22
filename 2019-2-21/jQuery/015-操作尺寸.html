@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			border: 10px solid #bbb;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			padding: 20px;
+			border: 20px solid #056;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">div1</div>
+	<div class="box2">div2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	/*
+	console.log($('div').width())
+	console.log($('div').height())
+	console.log($('div').width(150))
+	console.log($('div').height(150))
+	console.log($('div').innerHeight(150))
+	console.log($('div').innerWidth(150))
+	*/
+	console.log($('div').outerHeight(150))
+	console.log($('div').outerWidth(150))
+</script>
+</html>
