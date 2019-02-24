@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>测试</button>
+	<div>div1</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	;(function(){
+		$.prototype.setcolor = function(options){
+			console.log(this)
+			var DEFAULTS = {color:'red'}
+			var options = $.extend({},DEFAULTS,options)
+			this[0].style.color = options.color
+		}
+	})(jQuery);
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$('div').setcolor({'color':'yellow'})
+		})
+	})
+</script>
+</html>
