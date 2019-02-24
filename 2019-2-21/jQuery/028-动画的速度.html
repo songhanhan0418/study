@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>开始</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").eq(0).on('click',function(){
+			$('div').eq(0).animate({width:200},1000,'swing',function(){
+				console.log('1 done')
+			});
+			$('div').eq(1).animate({width:200},1000,'linear',function(){
+				console.log('2 done')
+			})
+		})
+
+	})
+</script>
+</html>

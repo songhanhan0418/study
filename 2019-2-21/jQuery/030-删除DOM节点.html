@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>删除1</button>
+	<button>删除2</button>
+	<button>删除3</button>
+	<div>
+		div1
+		<h1>标题</h1>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			console.log('aaa')
+		})
+		$('button').eq(0).on('click',function(){
+			var $div = $('div')
+			$('div').remove() //删除节点和事件
+			$('body').append($div)
+		})
+		$('button').eq(1).on('click',function(){
+			var $div = $('div')
+			$('div').empty()  //删除节点里的内容（不包括边框，事件）
+			$('body').append($div)
+		})
+		$('button').eq(2).on('click',function(){
+			var $div = $('div')
+			$('div').detach()  //删除节点（不删事件
+			$('body').append($div)
+		})
+	})
+</script>
+</html>
