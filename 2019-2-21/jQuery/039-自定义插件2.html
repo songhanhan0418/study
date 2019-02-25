@@ -18,19 +18,15 @@
 <script src="js/jquery-1.12.4.js"></script>
 <script>
 	;(function($){
-		$.prototype.setcolor = function(options){
-			console.log(this)
-			var DEFAULTS = {color:'red'}
-			options = $.extend({},DEFAULTS,options)
-			
-			var res = this.each(function(index,elem){
-				console.log(this)
-				this.style.color = options.color
-			})
-			return res
-			/*this[0].style.color = options.color
-			return this*/
-		}
+		$.fn.extend({
+			setcolor:function(options){
+				var DEFAULTS = {color:'red'}
+				options = $.extend({},DEFAULTS,options)
+				return this.each(function(index,elem){
+					this.style.color = options.color
+				})
+			}
+		})
 	})(jQuery);
 </script>
 <script>
