@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+	function lQuery(){
+
+	}
+	lQuery.prototype.extend = lQuery.extend = function(options){
+		console.log(this)
+		for(key in options){
+			this[key] = options[key]
+		}
+	}
+	lQuery.prototype.extend({
+		test1:function(){
+			console.log('test1..')
+		}
+	})
+	lQuery.extend({
+		test2:function(){
+			console.log('test2')
+		}
+	})
+
+	var l = new lQuery();
+	l.test1();
+	lQuery.test2()
+
+</script>
+</html>

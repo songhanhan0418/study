@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+(function(w){
+	var silent = {
+		show:function($elem){
+			$elem.trigger('show')
+			$elem.show()
+			$elem.trigger('shown')
+		},
+		hide:function($elem){
+			$elem.trigger('hide')
+			$elem.hide()
+			$elem.trigger('hidden')
+		}
+	}
+	$elem = $('div')
+	$elem.on('show shown hide hidden',function(event){
+		console.log('aa')
+		if(event.type == 'show'){
+			console.log('show...')
+		}else if(event.type == 'shown'){
+			console.log('shown...')
+		}else if(event.type == 'hide'){
+			console.log('hide ...')
+		}else if(event.type == 'hidden'){
+			console.log('hidden..')
+		}
+	})
+
+	
+
+	$('button').eq(0).on('click',function(){
+		silent.show($elem)
+	})
+	$('button').eq(1).on('click',function(){
+		silent.hide($elem)
+	})
+
+	
+})(window);
+
+</script>
+</html>
