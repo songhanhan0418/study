@@ -44,22 +44,14 @@ function hide($elem,cb){
 var silent = {
 	init:init,
 	show:function($elem){
-		/*if($elem.data('status') == 'shown') return;
-		if($elem.data('status') == 'show') return;
-		$elem.data('status','show').trigger('show')
-		$elem.show();
-		$elem.trigger('shown').data('status','shown');*/
+
 		show($elem,function(){
 			$elem.show();
 			$elem.trigger('shown').data('status','shown');
 		})
 	},
 	hide:function($elem){
-		/*if($elem.data('status') == 'hidden') return;
-		if($elem.data('status') == 'hide') return;
-		$elem.data('status','hide').trigger('hide')
-		$elem.hide()
-		$elem.trigger('hidden').data('status','hidden')*/
+
 		hide($elem,function(){
 			$elem.hide();
 			$elem.trigger('hidden').data('status','hidden');		
@@ -70,59 +62,50 @@ var silent = {
 var js = {
 	fade:{
 		init:function($elem){
-			/*if($elem.is(":hidden")){
-				$elem.data('status','hidden');
-			}else{
-				$elem.data('status','shown');
-			}*/
-			init($elem);
+			js._init($elem);
 		},
 		show:function($elem){
-			/*
-			if($elem.data('status') == 'shown') return;
-			if($elem.data('status') == 'show') return;
-			$elem.data('status','show').trigger('show')
-			
-			$elem.show();
-			$elem.trigger('shown').data('status','shown');
-			
-			$elem.stop()
-			.fadeIn(function(){
-				$elem.trigger('shown').data('status','shown')
-			})
-			*/
-			show($elem,function(){
-				$elem.stop()
-				.fadeIn(function(){
-					$elem.trigger('shown').data('status','shown')
-				})
-			})
+			js._show($elem,'fadeIn')
 		},
 		hide:function($elem){
-			/*
-			if($elem.data('status') == 'hidden') return;
-			if($elem.data('status') == 'hide') return;
-			$elem.data('status','hide').trigger('hide')
-			$elem.stop()
-			.fadeOut(function(){
-				$elem.trigger('hidden').data('status','hidden')
-			})
-			$elem.hide()
-			$elem.trigger('hidden').data('status','hidden')
-			*/
-			hide($elem,function(){
-				$elem.stop()
-				.fadeOut(function(){
-					$elem.trigger('hidden').data('status','hidden')
-				})	
-			})
+			js._hide($elem,'fadeOut')
+		}	
+	},
+	slideDownUp:{
+		init:function($elem){
+			js._init($elem);
+		},
+		show:function($elem){
+			js._show($elem,'slideDown')
+		},
+		hide:function($elem){
+			js._hide($elem,'slideUp')
 		}	
 	}
 }
 
+js._init = function($elem){
+	//$elem.removeClass('transition')
+	init($elem);
+}
+js._show = function($elem,mode){
+	show($elem,function(){
+		$elem.stop()
+		[mode](function(){
+			$elem.trigger('shown').data('status','shown')
+		})
+	})	
+}
+js._hide =function($elem,mode){
+	hide($elem,function(){
+		$elem.stop()
+		[mode](function(){
+			$elem.trigger('hidden').data('status','hidden')
+		})	
+	})	
+}
+
 $elem = $('div')
-
-
 
 $elem.on('show shown hide hidden',function(event){
 	if(event.type == 'show'){
@@ -153,7 +136,14 @@ $('button').eq(0).on('click',function(){
 $('button').eq(1).on('click',function(){
 	js.fade.hide($elem)
 })
-	
+
+/*js.slideDownUp.init($elem);
+$('button').eq(0).on('click',function(){
+	js.slideDownUp.show($elem)
+})
+$('button').eq(1).on('click',function(){
+	js.slideDownUp.hide($elem)
+})*/
 
 
 </script>
