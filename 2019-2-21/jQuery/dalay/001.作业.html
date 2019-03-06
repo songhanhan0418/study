@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.btn{
+			width: 80px;
+			height: 50px;
+			margin-left: 1000px;
+		}
+		.box{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 200px;
+			background: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn">点击</button>
+	<div class="box" ></div>
+
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script src="001.js"></script>
+<script>
+	var $btn = $('.btn')
+	var $box = $('.box')
+	$btn.change({
+		left:50,
+		top:50,
+		background:'yellow'
+	})
+</script>
+</html>
