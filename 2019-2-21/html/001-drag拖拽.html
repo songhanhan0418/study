@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-bottom: 50px
+		}
+		.box2{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1" draggable =true></div>
+	<div class="box2"></div>
+
+</body>
+<script src="../jQuery/js/jquery-1.12.4.js"></script>
+<script>
+	$('.box1')
+	.on('dragstart',function(){
+		console.log('dragstar..')
+	})
+	.on('drag',function(){
+		console.log('drag...')
+	})
+	.on('dragend',function(ev){
+		console.log('dragend..')
+
+	})
+	$('.box2')
+	.on('drop',function(){
+		console.log('drop...')
+	})
+	.on('dragover',function(ev){
+		console.log('dragnover..')
+		ev.preventDefault()
+	})
+	.on('dragleave',function(){
+		console.log('dragnleave')
+	})
+</script>
+</html>
