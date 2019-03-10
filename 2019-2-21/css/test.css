@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  color: #ff0000;
+  background: #ffff00;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  color: #ff0000;
+  background: #ffff00;
+  width: 30px - 10px ;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  color: #ff0000;
+  background: #ffff00;
+  width: 30px - 10px ;
+  border: 10px;
+}
+.box4 {
+  width: 10px;
+}
+/*# sourceMappingURL=test.css.map */
