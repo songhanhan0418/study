@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			float: left;
+			width: 15rem;
+		}
+		h1{
+			font-size: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<img id="hhh" src="../2018-10-22/JS/images/ad3.jpg" alt="">
+	<div id="bbb">div</div>
+	<h1>h1</h1>
+	<p>ppp</p>
+</body>
+<script>
+(function(win,doc){
+	var oImg = doc.getElementById('hhh')
+	var oH1 = doc.getElementById('bbb')
+	var oHtml = doc.getElementsByTagName('html')[0]
+	oHtml.style.fontSize = 32 + 'px';
+	document.addEventLister('resize',function(){
+		
+	})
+})(window,document);
+</script>
+</html>
