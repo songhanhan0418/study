@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+		header,footer{
+			flex: 0 0 12vh;
+			background: red;
+		}
+		section{
+			background: yellow;
+			flex-grow: 1 ;
+			display: flex;
+		}
+		nav,aside{
+			flex: 0 0 20vw;
+			background: green
+		}
+		main{
+			flex-grow: 1;
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<section>
+		<nav>nav</nav>
+		<main>main</main>
+		<aside>aside</aside>
+	</section>
+	<footer>footer</footer>
+</body>
+</html>
