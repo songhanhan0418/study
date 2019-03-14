@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var a = 1;
+	var a = 2;
+	console.log('a:',a);
+	let b = 1;
+	let b = 2;
+	console.log('b',b)
+	*/
+
+	/*
+	console.log('a:',a)
+	var a = 1;
+	console.log('b',b)
+	let b = 1;
+	*/
+/*
+	if(true){
+		var a = 1;
+
+	}
+	console.log('a:',a);
+
+	if (true) {
+		let b = 1;
+	}
+	console.log('b:',b)
+	*/
+	function fn1(){
+		var a = 1;
+		function fn2(){
+			a = 2;
+			console.log('1a:',a)
+		}
+		console.log('3a::',a)
+		fn2();
+		console.log('2a::',a)
+	}
+	fn1();
+
+	function fn11(){
+		let b = 1;
+		function fn22(){
+			b = 2;
+			console.log('1b:',b)
+		}
+		console.log('3b::',b)
+		fn22();
+		console.log('2b::',b)
+	}
+	fn11();
+</script>
+</html>

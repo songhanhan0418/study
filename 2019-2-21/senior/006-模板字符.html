@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+</body>
+<script src="../jQuery/js/jquery-1.12.4.min.js"></script>
+<script>
+	var oBtn = document.getElementById('btn');
+	var username = 'Tom'
+	oBtn.onclick =function(){
+		var html = `
+			<ul>
+				<li>${username}</li>
+				<li>${username}</li>
+				<li>${username}</li>
+				<li>${username}</li>
+
+			</ul>
+		`
+		document.body.innerHTML = html
+	}
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let arr1 = [11,22];
+	console.log(arr1)
+	console.log(...arr1)
+
+	function sum(n1,n2){
+		return n1 + n2;
+	}
+	console.log(sum(...arr1))
+
+	function add(...arr1){
+		let result = 0;
+		for(var i = 0;i <arr1.length;i++){
+			result +=arr1[i];
+		}
+		return result;
+	}
+	console.log(add(33,44))
+let arr = [11,22,44,88,77];
+//ES5
+Math.max.apply(null,arr)
+//ES6 用扩展运算
+Math.max(...arr)
+
+let arr1 = [11,22,44,88,77];
+//ES5
+let arr2 = arr1.concat();
+let arr3 = arr1.slice();
+//ES6 用扩展运算
+let arr2 = [...arr1];
+</script>
+</html>
