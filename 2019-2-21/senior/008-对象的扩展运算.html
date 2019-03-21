@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj1= {
+		name:'Tom',
+		friend:{
+			name:'mike'
+		}
+	}
+	console.log({...obj1})
+	let obj2 = {...obj1}
+
+
+	obj2.name = 'leo'
+	obj2.friend.name = 'amy'
+		console.log(obj1,obj2)
+</script>
+</html>
