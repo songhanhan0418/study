@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+let getImgPromise = (url)=>{
+	return new Promise((resolve,reject)=>{
+		let img = new Image();
+		img.onload = function(){
+			resolve(url)
+		};
+		img.onerror =function(){
+			reject(url)
+		}
+		img.src = url
+	})	
+}
+getImgPromise('./img/wow1.jpg')
+.then((data)=>{
+	console.log('success:::',data)
+},(err)=>{
+	console.log('failed:::',err)
+})
+
+</script>
+</html>

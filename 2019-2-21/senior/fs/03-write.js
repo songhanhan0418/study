@@ -11,14 +11,15 @@ const fd = fs.open('./01.txt','a',(err,fd)=>{
 			}else{
 				console.log('write success')
 			}
+			fs.close(fd,(err)=>{
+				if(err){
+					console.log('close err::')
+				}else{
+					console.log('close success')
+				}
+			})
 		})
-	fs.close(fd,(err)=>{
-		if(err){
-			console.log('close err::')
-		}else{
-			console.log('close success')
-		}
-	})
+	
 	}
 
 });

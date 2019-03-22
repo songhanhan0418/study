@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*let p1 = Promise.resolve();
+	console.log(p1)
+
+	let p2 = Promise.resolve(p1);
+	console.log(p2)
+	console.log(p1 === p2)*/
+
+	/*let obj1 = {
+		then:function(){
+			console.log('aaa')
+		}
+	}
+	let p3 = Promise.resolve(obj1)
+	console.log(p3)*/
+	let obj2 = {
+		otherThen:function(){
+			console.log('bbb')
+		}
+	}
+	let p4 = Promise.resolve(obj2);
+	console.log(p4)
+</script>
+</html>
