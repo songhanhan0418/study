@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let {keys} = Object;
+	Object.prototype.test = 'test'
+	let obj = {
+		name:'name',
+		age:'age',
+	}
+	Object.defineProperty(obj,'country',{
+		value:'China',
+		//enumerable:true
+	})
+	console.log('obj:',obj)
+	console.log('keys::',keys(obj))
+</script>
+</html>
