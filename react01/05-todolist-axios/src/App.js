@@ -1,8 +1,8 @@
 import React,{Component,Fragment} from 'react'
 import { Button,Row, Col,Input,List } from 'antd';
-
+import axios from 'axios';
 import store from './store/index.js'
-import {getAddItemAction,getChangeItemAction,getDelItemAction} from './store/actionCreator.js'
+import {getAddItemAction,getChangeItemAction,getDelItemAction,loadInitDataAction} from './store/actionCreator.js'
 import AppUI from './AppUI.js'
 class App extends Component{
 	constructor(props){
@@ -14,6 +14,14 @@ class App extends Component{
 		this.handleChange = this.handleChange.bind(this)
 		this.handleAdd = this.handleAdd.bind(this)
 		this.handleDel = this.handleDel.bind(this)
+	}
+	componentDidMount(){
+		axios
+		.get('http://127.0.0.1:3000')
+		.then(result=>{
+			const action = loadInitDataAction(result.data)
+			store.dispatch(action)
+		})
 	}
 	handleAdd(){
 		const action = getAddItemAction()
